@@ -8,12 +8,14 @@ export async function generateStaticParams() {
     })) || [];
 }
 
+// Next.js 15/16+ requires awaiting params
 export default async function ProjectPage({
     params,
 }: {
-    params: { slug: string };
+    params: Promise<{ slug: string }>;
 }) {
-    const result = await client.queries.project({ relativePath: `${params.slug}.md` });
+    const { slug } = await params;
+    const result = await client.queries.project({ relativePath: `${slug}.md` });
 
     return <ProjectClientPage {...result} />;
 }
