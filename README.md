@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Baxtop Hero Website
+
+A portfolio website for [Baxtop](https://baxtop.agency), featuring a "Wireframe Bauhaus" aesthetic inspired by Gego's *Reticulárea*. Built with Next.js, TinaCMS, and Tailwind CSS.
 
 ## Getting Started
 
