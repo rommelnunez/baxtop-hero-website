@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { client } from "../../tina/__generated__/client";
 
 // Mock Data until TinaCMS Client is fully integrated
 const projects = [
