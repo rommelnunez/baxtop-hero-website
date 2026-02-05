@@ -32,17 +32,15 @@ body {
   background: var(--background);
   font-family: var(--font-roboto), sans-serif;
 
-  /* Gego "Reticulárea" Background Pattern */
-  background-image: radial-gradient(var(--foreground) 1px, transparent 1px);
+  /* Gego "Reticulárea" Background Pattern - kept subtle */
+  background-image: radial-gradient(rgba(17, 17, 17, 0.15) 1px, transparent 1px);
   background-size: 40px 40px;
   /* Porous grid */
 }
 
-/* Global Wireframe Style */
-* {
-  border-width: 0;
-  border-style: solid;
-  border-color: var(--foreground);
+/* Utilities */
+.text-balance {
+  text-wrap: balance;
 }
 
 a {

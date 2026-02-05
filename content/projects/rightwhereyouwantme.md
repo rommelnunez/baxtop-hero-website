@@ -1,8 +1,8 @@
 ---
 title: rightwhereyouwantme
 client: Issadora Ava
-year: "2024"
-coverImage: /uploads/rightwhereyouwantme.jpg
+year: '2023'
+coverImage: https://img.youtube.com/vi/FrSuiM0eRH8/maxresdefault.jpg
+videoUrl: https://www.youtube.com/watch?v=FrSuiM0eRH8
+subtitle: Official Music Video
 ---
-
-Music Video for Issadora Ava.
