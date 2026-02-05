@@ -1,15 +1,21 @@
 'use client';
 
 import { tinaField, useTina } from "tinacms/dist/react";
+import { ProjectQuery } from "../../tina/__generated__/types";
 
-export default function ProjectClientPage(props: any) {
+export default function ProjectClientPage(props: {
+    data: ProjectQuery;
+    variables: object;
+    query: string;
+}) {
     const { data } = useTina(props);
     const { project } = data;
 
     // Extract YouTube ID if valid URL
-    const getYoutubeId = (url: string) => {
+    const getYoutubeId = (url: string | null | undefined) => {
+        if (!url) return null;
         const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
-        const match = url?.match(regExp);
+        const match = url.match(regExp);
         return (match && match[2].length === 11) ? match[2] : null;
     };
 
