@@ -30,47 +30,18 @@ const projects = [
     title: "rightwhereyouwantme",
     client: "Issadora Ava",
     coverImage: "https://baxtop.agency/images/rightwhereyouwantme.jpg",
-    // const projects = [
-    //   {
-    //     title: "FALLOUT",
-    //     client: "Low.bo",
-    //     coverImage: "https://baxtop.agency/images/fallout.jpg", // Placeholder - needs real assets
-    //     slug: "fallout",
-    //   },
-    //   {
-    //     title: "Alchemical",
-    //     client: "Rachel Bochner",
-    //     coverImage: "https://baxtop.agency/images/alchemical.jpg",
-    //     slug: "alchemical",
-    //   },
-    //   {
-    //     title: "You, Me, and Her",
-    //     client: "Black Hibiscus",
-    //     coverImage: "https://baxtop.agency/images/you-me-her.jpg",
-    //     slug: "you-me-her",
-    //   },
-    //   {
-    //     title: "Jersey in July",
-    //     client: "Dom Innarella",
-    //     coverImage: "https://baxtop.agency/images/jersey-july.jpg",
-    //     slug: "jersey-july",
-    //   },
-    //   {
-    //     title: "rightwhereyouwantme",
-    //     client: "Issadora Ava",
-    //     coverImage: "https://baxtop.agency/images/rightwhereyouwantme.jpg",
-    //     slug: "rightwhereyouwantme",
-    //   },
-    // ];
+    slug: "rightwhereyouwantme",
+  },
+];
 
-    export default async function Home() {
-    const projectsResponse = await client.queries.projectConnection();
-    const projects = projectsResponse.data.projectConnection.edges?.map((edge) => edge?.node).reverse(); // Newest first
+export default async function Home() {
+  const projectsResponse = await client.queries.projectConnection();
+  const projects = projectsResponse.data.projectConnection.edges?.map((edge) => edge?.node).reverse(); // Newest first
 
-    if(!projects) return null;
+  if (!projects) return null;
 
-    return(
-    <main className = "min-h-screen pt-32 pb-20 px-4 md:px-12 bg-background text-foreground" >
+  return (
+    <main className="min-h-screen pt-32 pb-20 px-4 md:px-12 bg-background text-foreground" >
       {/* 
          Object & Animal inspired Grid:
          - 2 Columns on large screens
@@ -78,7 +49,7 @@ const projects = [
          - Loose vertical spacing (gap-y-24)
          - 0px gap between Image and Text
       */}
-        < section className = "grid grid-cols-1 md:grid-cols-2 gap-x-8 md:gap-x-16 gap-y-24 max-w-screen-2xl mx-auto" >
+      < section className="grid grid-cols-1 md:grid-cols-2 gap-x-8 md:gap-x-16 gap-y-24 max-w-screen-2xl mx-auto" >
         {
           projects.map((project: any) => (
             <Link
