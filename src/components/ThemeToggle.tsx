@@ -17,10 +17,17 @@ export function ThemeToggle() {
     return (
         <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="fixed top-6 right-6 z-50 px-4 py-2 text-sm font-bold tracking-wide uppercase bg-foreground text-background rounded-full transition-all hover:opacity-80 active:scale-95"
+            className="fixed bottom-6 right-6 z-50 w-12 h-12 flex items-center justify-center font-bold uppercase bg-background text-foreground transition-all hover:bg-[var(--accent)] hover:text-white border border-foreground group"
             aria-label="Toggle Theme"
+            style={{ borderRadius: 0 }}
         >
-            {theme === "dark" ? "Light" : "Dark"}
+            {/* Node Accents (Corners) */}
+            <span className="absolute -top-1 -left-1 w-2 h-2 bg-foreground group-hover:bg-white transition-colors" />
+            <span className="absolute -top-1 -right-1 w-2 h-2 bg-foreground group-hover:bg-white transition-colors" />
+            <span className="absolute -bottom-1 -left-1 w-2 h-2 bg-foreground group-hover:bg-white transition-colors" />
+            <span className="absolute -bottom-1 -right-1 w-2 h-2 bg-foreground group-hover:bg-white transition-colors" />
+
+            {theme === "dark" ? "L" : "D"}
         </button>
     );
 }

@@ -1,14 +1,18 @@
 :root {
-  --background: #f4f4f4;
+  --background: #F4F4F4;
   --foreground: #111111;
-  --accent: #111111;
+  --accent: #D02222;
+  /* Bauhaus Red */
+  --bauhaus-blue: #153C98;
+  --bauhaus-yellow: #F1B920;
   --font-roboto: 'Roboto', sans-serif;
 }
 
 [data-theme='dark'] {
   --background: #111111;
-  --foreground: #f4f4f4;
-  --accent: #f4f4f4;
+  --foreground: #F4F4F4;
+  --accent: #F1B920;
+  /* Bauhaus Yellow for dark mode accent */
 }
 
 * {
@@ -27,11 +31,21 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-roboto), sans-serif;
-  transition: background-color 0.5s ease, color 0.5s ease;
+
+  /* Gego "Reticulárea" Background Pattern */
+  background-image: radial-gradient(var(--foreground) 1px, transparent 1px);
+  background-size: 40px 40px;
+  /* Porous grid */
+}
+
+/* Global Wireframe Style */
+* {
+  border-width: 0;
+  border-style: solid;
+  border-color: var(--foreground);
 }
 
 a {
   color: inherit;
   text-decoration: none;
 }
-

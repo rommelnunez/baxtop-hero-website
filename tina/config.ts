@@ -4,8 +4,10 @@ const branch = process.env.GITHUB_BRANCH || process.env.VERCEL_GIT_COMMIT_REF ||
 
 export default defineConfig({
     branch,
-    clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID || null,
-    token: process.env.TINA_TOKEN || null,
+    // For local development or CI where we just want the build to pass without real auth
+    clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID ?? undefined,
+    token: process.env.TINA_TOKEN ?? undefined,
+    contentApiUrlOverride: process.env.TINA_PUBLIC_IS_LOCAL === 'true' ? "/api/tina/gql" : undefined,
     build: {
         outputFolder: "admin",
         publicFolder: "public",

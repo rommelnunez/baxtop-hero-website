@@ -1,0 +1,16 @@
+fragment ProjectParts on Project {
+  __typename
+  title
+  client
+  subtitle
+  year
+  coverImage
+  videoUrl
+  body
+}
+
+fragment PageParts on Page {
+  __typename
+  title
+  body
+}
